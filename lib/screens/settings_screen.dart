@@ -49,7 +49,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            colors: [Color(0xFF6C5CE7), Color(0xFFA29BFE), Color(0xFFF8F9FA)],
+            colors: [
+              Color.fromARGB(255, 138, 227, 154),
+              Color.fromARGB(255, 73, 159, 68),
+              Color(0xFFF8F9FA),
+            ],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ),
@@ -63,9 +67,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
+
                   color: Colors.white,
                 ),
-              ), 
+              ),
               const SizedBox(height: 30),
               Center(
                 child: GestureDetector(
@@ -156,7 +161,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
       margin: const EdgeInsets.only(bottom: 12),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
       child: ListTile(
-        leading: Icon(icon, color: const Color(0xFF6C5CE7)),
+        leading: Icon(icon, color: const Color.fromARGB(255, 151, 231, 131)),
         title: Text(
           title,
           style: const TextStyle(fontSize: 13, color: Colors.grey),
