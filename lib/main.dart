@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
           surface: Colors.white,
           onSurface: Colors.black,
         ),
-        scaffoldBackgroundColor: Colors.green.shade50, // Light green background
+        scaffoldBackgroundColor: Colors.green.shade50,
         cardColor: Colors.white,
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
