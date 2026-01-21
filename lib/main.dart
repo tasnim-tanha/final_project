@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'screens/login_screen.dart';
 import 'screens/home_screen.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,6 +22,8 @@ class MyApp extends StatelessWidget {
       title: 'Pro Recipe Book',
       theme: ThemeData(
         useMaterial3: true,
+        textTheme: GoogleFonts.ubuntuTextTheme(),
+
         colorScheme: ColorScheme.fromSeed(
           seedColor: Colors.green,
           primary: Colors.green.shade600,
