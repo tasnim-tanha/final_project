@@ -6,6 +6,9 @@ import '../models/recipe.dart';
 import 'recipe_detail_screen.dart';
 import 'add_edit_recipe_screen.dart';
 import 'settings_screen.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+import 'package:google_fonts/google_fonts.dart';
 
 class RecipesScreen extends ConsumerStatefulWidget {
   const RecipesScreen({super.key});
@@ -26,16 +29,21 @@ class _RecipesScreenState extends ConsumerState<RecipesScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: _pages[_selectedIndex],
+
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         onTap: (index) => setState(() => _selectedIndex = index),
-        selectedItemColor: const Color(0xFF1E5631),
+        selectedItemColor: const Color.fromARGB(255, 39, 245, 108),
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.restaurant_menu),
             label: 'Recipes',
           ),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Profile',
+            backgroundColor: Colors.black,
+          ),
         ],
       ),
     );
@@ -77,15 +85,18 @@ class _RecipeListSectionState extends ConsumerState<RecipeListSection> {
 
   @override
   Widget build(BuildContext context) {
- 
     final recipesAsync = ref.watch(recipesProvider);
 
     return Scaffold(
       backgroundColor: const Color(0xFFF4F7F5),
       appBar: AppBar(
-        title: const Text(
+        title: Text(
           'My Culinary Arts',
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style: GoogleFonts.playfairDisplay(
+            fontSize: 28,
+            fontWeight: FontWeight.w800,
+            letterSpacing: 1.2,
+          ),
         ),
         backgroundColor: const Color(0xFF1E5631),
         foregroundColor: Colors.white,
@@ -93,7 +104,7 @@ class _RecipeListSectionState extends ConsumerState<RecipeListSection> {
       body: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.all(16),
+            padding: const EdgeInsets.all(15),
             child: TextField(
               onChanged: (value) => setState(() => _searchQuery = value),
               decoration: InputDecoration(
@@ -147,19 +158,19 @@ class _RecipeListSectionState extends ConsumerState<RecipeListSection> {
                     .toList();
 
                 return GridView.builder(
-                  padding: const EdgeInsets.all(16),
+                  padding: const EdgeInsets.all(60),
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 16,
-                    mainAxisSpacing: 16,
-                    childAspectRatio: 0.72,
+                    crossAxisCount: 3,
+                    crossAxisSpacing: 12,
+                    mainAxisSpacing: 10,
+                    childAspectRatio: 0.90,
                   ),
                   itemCount: filtered.length,
                   itemBuilder: (context, index) {
                     final recipe = filtered[index];
                     return Container(
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: const Color.fromARGB(255, 210, 244, 183),
                         borderRadius: BorderRadius.circular(20),
                         boxShadow: [
                           BoxShadow(
@@ -226,7 +237,7 @@ class _RecipeListSectionState extends ConsumerState<RecipeListSection> {
                                     IconButton(
                                       icon: const Icon(
                                         Icons.delete_outline,
-                                        color: Colors.redAccent,
+                                        color: Color.fromARGB(255, 8, 17, 1),
                                       ),
                                       onPressed: () => _confirmDelete(
                                         context,
