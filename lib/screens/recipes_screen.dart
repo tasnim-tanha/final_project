@@ -77,7 +77,7 @@ class _RecipeListSectionState extends ConsumerState<RecipeListSection> {
 
   @override
   Widget build(BuildContext context) {
-    // ডাটাবেস থেকে ডাটা রিফ্রেশ করা হচ্ছে
+ 
     final recipesAsync = ref.watch(recipesProvider);
 
     return Scaffold(
