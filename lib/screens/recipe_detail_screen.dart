@@ -9,7 +9,7 @@ class RecipeDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFFEF9E7), // Warm Cream
+      backgroundColor: const Color(0xFFFEF9E7),
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
