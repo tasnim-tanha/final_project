@@ -65,7 +65,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
                 ),
-              ), // শিরোনাম পরিবর্তন
+              ), 
               const SizedBox(height: 30),
               Center(
                 child: GestureDetector(
